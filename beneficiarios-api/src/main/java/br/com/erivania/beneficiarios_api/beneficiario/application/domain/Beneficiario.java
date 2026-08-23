@@ -41,5 +41,7 @@ public class Beneficiario {
         this.nome = beneficiarioRequest.getNome();
         this.telefone = beneficiarioRequest.getTelefone();
         this.dataNascimento = beneficiarioRequest.getDataNascimento();
+        this.dataInclusao = LocalDateTime.now();
+        this.dataAtualizacao = LocalDateTime.now();
     }
 }
