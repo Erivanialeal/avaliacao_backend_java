@@ -1,10 +1,12 @@
 package br.com.erivania.beneficiarios_api.beneficiario.application.domain;
 
 
+import br.com.erivania.beneficiarios_api.beneficiario.application.api.BeneficiarioRequest;
 import br.com.erivania.beneficiarios_api.documento.application.domain.Documento;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -13,6 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
+@Getter
 public class Beneficiario {
     @Id
     @Column(columnDefinition = "uuid", name = "idBeneficiario",updatable = false, unique = true,nullable = false)
@@ -34,9 +37,9 @@ public class Beneficiario {
     protected Beneficiario() {
     }
 
-    public Beneficiario(String nome, String telefone, LocalDate dataNascimento) {
-        this.nome = nome;
-        this.telefone = telefone;
-        this.dataNascimento = dataNascimento;
+    public Beneficiario(BeneficiarioRequest beneficiarioRequest) {
+        this.nome = beneficiarioRequest.getNome();
+        this.telefone = beneficiarioRequest.getTelefone();
+        this.dataNascimento = beneficiarioRequest.getDataNascimento();
     }
 }
