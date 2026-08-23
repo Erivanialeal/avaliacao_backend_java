@@ -31,7 +31,7 @@ public class Beneficiario {
     private LocalDateTime dataInclusao;
     @NotNull
     private LocalDateTime dataAtualizacao;
-    @OneToMany(mappedBy = "beneficiario")
+    @OneToMany(mappedBy = "beneficiario",cascade = CascadeType.ALL)
     private List<Documento> documentos = new ArrayList<>();
 
     protected Beneficiario() {
@@ -43,5 +43,9 @@ public class Beneficiario {
         this.dataNascimento = beneficiarioRequest.getDataNascimento();
         this.dataInclusao = LocalDateTime.now();
         this.dataAtualizacao = LocalDateTime.now();
+    }
+
+    public void adicionarDocumento(Documento documento) {
+        this.documentos.add(documento);
     }
 }

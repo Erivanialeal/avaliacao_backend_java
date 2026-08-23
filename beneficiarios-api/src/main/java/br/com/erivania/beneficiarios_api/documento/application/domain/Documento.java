@@ -1,14 +1,17 @@
 package br.com.erivania.beneficiarios_api.documento.application.domain;
 
 import br.com.erivania.beneficiarios_api.beneficiario.application.domain.Beneficiario;
+import br.com.erivania.beneficiarios_api.documento.application.api.DocumentoRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
+@Getter
 public class Documento {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,8 +32,9 @@ public class Documento {
     protected Documento() {
     }
 
-    public Documento(String tipoDocumento, String descricao) {
-        this.tipoDocumento = tipoDocumento;
-        this.descricao = descricao;
+    public Documento(DocumentoRequest documentoRequest, Beneficiario beneficiario) {
+        this.tipoDocumento = documentoRequest.getTipoDocumento();
+        this.descricao = documentoRequest.getDescricao();
+        this.beneficiario= beneficiario;
     }
 }
