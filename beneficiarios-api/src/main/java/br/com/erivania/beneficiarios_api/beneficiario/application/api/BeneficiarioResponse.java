@@ -1,13 +1,14 @@
 package br.com.erivania.beneficiarios_api.beneficiario.application.api;
 import br.com.erivania.beneficiarios_api.beneficiario.application.domain.Beneficiario;
 import br.com.erivania.beneficiarios_api.documento.application.api.DocumentoResponse;
-import br.com.erivania.beneficiarios_api.documento.application.domain.Documento;
 import lombok.Builder;
 import lombok.Value;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Value
 @Builder

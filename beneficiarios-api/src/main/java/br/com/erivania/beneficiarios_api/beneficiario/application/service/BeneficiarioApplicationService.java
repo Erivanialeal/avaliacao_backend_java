@@ -1,5 +1,6 @@
 package br.com.erivania.beneficiarios_api.beneficiario.application.service;
 
+import br.com.erivania.beneficiarios_api.beneficiario.application.api.BeneficiarioListResponse;
 import br.com.erivania.beneficiarios_api.beneficiario.application.api.BeneficiarioRequest;
 import br.com.erivania.beneficiarios_api.beneficiario.application.api.BeneficiarioResponse;
 import br.com.erivania.beneficiarios_api.beneficiario.application.domain.Beneficiario;
@@ -9,6 +10,8 @@ import br.com.erivania.beneficiarios_api.documento.application.domain.Documento;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @Log4j2
@@ -40,5 +43,13 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
                             .toList()
                 )
                 .build();
+    }
+
+    @Override
+    public List<BeneficiarioListResponse> listarTodosOsBeneficiario() {
+        log.info("[inicia] BeneficiarioApplicationService - listarTodosOsBeneficiario ");
+        List<Beneficiario> beneficiarios = beneficiarioRepository.findAll();
+        log.info("[finaliza] BeneficiarioApplicationService - listarTodosOsBeneficiario ");
+        return BeneficiarioListResponse.converte(beneficiarios);
     }
 }
