@@ -3,6 +3,7 @@ package br.com.erivania.beneficiarios_api.documento.application.domain;
 import br.com.erivania.beneficiarios_api.beneficiario.application.domain.Beneficiario;
 import br.com.erivania.beneficiarios_api.documento.application.api.DocumentoRequest;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -28,13 +29,14 @@ public class Documento {
     @ManyToOne
     @JoinColumn(name = "id_beneficiario")
     private Beneficiario beneficiario;
-
-    protected Documento() {
-    }
+    
 
     public Documento(DocumentoRequest documentoRequest, Beneficiario beneficiario) {
         this.tipoDocumento = documentoRequest.getTipoDocumento();
         this.descricao = documentoRequest.getDescricao();
+        this.dataAtualizacao = LocalDateTime.now();
+        this.dataInclusao = LocalDateTime.now();
         this.beneficiario= beneficiario;
+
     }
 }

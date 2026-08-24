@@ -20,11 +20,11 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
         log.info("[inicia] BeneficiarioApplicationService - criarBeneficiario ");
         Beneficiario beneficiario = new Beneficiario(beneficiarioRequest);
         beneficiarioRequest.getDocumentos().forEach(documentoRequest -> {
-            Documento documento = new Documento(documentoRequest,beneficiario);
+            Documento documento = new Documento(documentoRequest, beneficiario);
             beneficiario.adicionarDocumento(documento);
         });
-        beneficiario = beneficiarioRepository.salva(beneficiario);
-        log.info("[inicia] BeneficiarioApplicationService - criarBeneficiario ");
+        beneficiarioRepository.salva(beneficiario);
+        log.info("[finaliza] BeneficiarioApplicationService - criarBeneficiario ");
         return BeneficiarioResponse.builder()
                 .idBeneficiario(beneficiario.getIdBeneficiario())
                 .nome(beneficiario.getNome())
