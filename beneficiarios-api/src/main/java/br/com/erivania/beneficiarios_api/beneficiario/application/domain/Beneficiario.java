@@ -48,4 +48,11 @@ public class Beneficiario {
     public void adicionarDocumento(Documento documento) {
         this.documentos.add(documento);
     }
+
+    public void atualizar(BeneficiarioRequest request) {
+        this.nome = request.getNome();
+        this.telefone = request.getTelefone();
+
+
+    }
 }

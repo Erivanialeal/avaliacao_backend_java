@@ -12,5 +12,5 @@ public interface BeneficiarioService {
     BeneficiarioResponse criarBeneficiario(BeneficiarioRequest beneficiarioRequest);
     List<BeneficiarioListResponse> listarTodosOsBeneficiario();
     List<DocumentoResponse> listarTodosOsDocumentos(UUID idBeneficiario);
-    BeneficiarioResponse atualizar(UUID idBeneficiario, BeneficiarioRequest request);
+    BeneficiarioListResponse atualizar(UUID idBeneficiario, BeneficiarioRequest request);
 }

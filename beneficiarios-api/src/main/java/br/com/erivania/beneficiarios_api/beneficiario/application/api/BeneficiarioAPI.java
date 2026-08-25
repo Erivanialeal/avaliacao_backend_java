@@ -23,7 +23,7 @@ public interface BeneficiarioAPI {
     List<DocumentoResponse> getListaDocumentosBeneficiario(@PathVariable UUID idBeneficiario);
 
     @PatchMapping("/{idBeneficiario}")
-    BeneficiarioResponse patchAtualizarBeneficiario(@PathVariable UUID idBeneficiario, @RequestBody BeneficiarioRequest request);
+    BeneficiarioListResponse patchAtualizarBeneficiario(@PathVariable UUID idBeneficiario, @RequestBody BeneficiarioRequest request);
 
 
 

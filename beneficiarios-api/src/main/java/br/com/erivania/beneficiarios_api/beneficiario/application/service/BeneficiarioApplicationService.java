@@ -69,7 +69,12 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
     }
 
     @Override
-    public BeneficiarioResponse atualizar(UUID idBeneficiario, BeneficiarioRequest request) {
-        return null;
+    public BeneficiarioListResponse atualizar(UUID idBeneficiario, BeneficiarioRequest request) {
+        log.info("[inicia] BeneficiarioApplicationService - atualizar");
+        Beneficiario  beneficiario = beneficiarioRepository.buscarId(idBeneficiario);
+        beneficiario.atualizar(request);
+        beneficiarioRepository.salva(beneficiario);
+        log.info("[finaliza] BeneficiarioApplicationService - atualizar");
+        return new BeneficiarioListResponse(beneficiario);
     }
 }
