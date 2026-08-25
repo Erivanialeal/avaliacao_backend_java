@@ -4,8 +4,8 @@ server:
     context-path: /beneficiario/api
 spring:
   datasource:
-    url: jdbc:h2:mem:demodb
-    username: sa
+    url: jdbc:h2:file:./data/demodb
+    username: beneficiario_admin
     password:
     driverClassName: org.h2.Driver
 
