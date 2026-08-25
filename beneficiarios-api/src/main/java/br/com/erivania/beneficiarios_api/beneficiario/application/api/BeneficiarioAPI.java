@@ -17,6 +17,7 @@ public interface BeneficiarioAPI {
     BeneficiarioResponse postBeneficiario(@Valid @RequestBody BeneficiarioRequest beneficiarioRequest);
 
     @GetMapping
+    @ResponseStatus(code = HttpStatus.OK)
     List<BeneficiarioListResponse> getListaTodosBeneficiarios();
 
     @GetMapping("/{idBeneficiario}/documentos")
@@ -24,6 +25,10 @@ public interface BeneficiarioAPI {
 
     @PatchMapping("/{idBeneficiario}")
     BeneficiarioListResponse patchAtualizarBeneficiario(@PathVariable UUID idBeneficiario, @RequestBody BeneficiarioRequest request);
+
+    @DeleteMapping("/{idBeneficiario}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    BeneficiarioListResponse deleteBeneficiario(@PathVariable UUID idBeneficiario);
 
 
 

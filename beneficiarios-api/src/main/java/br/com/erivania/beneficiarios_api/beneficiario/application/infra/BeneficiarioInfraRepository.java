@@ -3,8 +3,10 @@ package br.com.erivania.beneficiarios_api.beneficiario.application.infra;
 import br.com.erivania.beneficiarios_api.beneficiario.application.domain.Beneficiario;
 import br.com.erivania.beneficiarios_api.beneficiario.application.repository.BeneficiarioRepository;
 import br.com.erivania.beneficiarios_api.documento.application.domain.Documento;
+import br.com.erivania.beneficiarios_api.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -38,6 +40,16 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
         log.info("[inicia] BeneficiarioInfraRepository - buscarId");
         Beneficiario beneficiario = beneficiarioSpringDataJPARepository.findByIdBeneficiario(idBeneficiario);
         log.info("[inicia] BeneficiarioInfraRepository - buscarId");
+        return beneficiario;
+    }
+
+    @Override
+    public Beneficiario delete(UUID idBeneficiario) {
+        log.info("[inicia] BeneficiarioInfraRepository -  delete");
+        Beneficiario beneficiario= beneficiarioSpringDataJPARepository.findById(idBeneficiario)
+                        .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND,"Usuário não encontrado!"));
+        beneficiarioSpringDataJPARepository.delete(beneficiario);
+        log.info("[inicia] BeneficiarioInfraRepository -  delete");
         return beneficiario;
     }
 

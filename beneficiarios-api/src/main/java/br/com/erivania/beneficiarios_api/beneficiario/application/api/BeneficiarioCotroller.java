@@ -47,4 +47,10 @@ public class BeneficiarioCotroller implements BeneficiarioAPI {
         log.info("[finaliza] BeneficiarioCotroller - patchAtualizarBeneficiario");
         return response;
     }
+
+    @Override
+    public BeneficiarioListResponse deleteBeneficiario(UUID idBeneficiario) {
+        BeneficiarioListResponse deletar = beneficiarioService.deletarBeneficiario(idBeneficiario);
+        return deletar;
+    }
 }
