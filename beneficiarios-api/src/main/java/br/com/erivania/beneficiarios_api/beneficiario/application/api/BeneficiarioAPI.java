@@ -22,6 +22,11 @@ public interface BeneficiarioAPI {
     @GetMapping("/{idBeneficiario}/documentos")
     List<DocumentoResponse> getListaDocumentosBeneficiario(@PathVariable UUID idBeneficiario);
 
+    @PatchMapping("/{idBeneficiario}")
+    BeneficiarioResponse patchAtualizarBeneficiario(@PathVariable UUID idBeneficiario, @RequestBody BeneficiarioRequest request);
+
+
+
 
 
 

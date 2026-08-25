@@ -67,4 +67,9 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
                 ))
                 .toList();
     }
+
+    @Override
+    public BeneficiarioResponse atualizar(UUID idBeneficiario, BeneficiarioRequest request) {
+        return null;
+    }
 }

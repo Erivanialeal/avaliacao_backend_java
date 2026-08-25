@@ -39,4 +39,12 @@ public class BeneficiarioCotroller implements BeneficiarioAPI {
         log.info("[finaliza] BeneficiarioCotroller - getListaDocumentosBeneficiario");
         return documentos;
     }
+
+    @Override
+    public BeneficiarioResponse patchAtualizarBeneficiario(UUID idBeneficiario, BeneficiarioRequest request) {
+        log.info("[inicia] BeneficiarioCotroller - patchAtualizarBeneficiario");
+        BeneficiarioResponse response = beneficiarioService.atualizar(idBeneficiario,request);
+        log.info("[finaliza] BeneficiarioCotroller - patchAtualizarBeneficiario");
+        return response;
+    }
 }
