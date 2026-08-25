@@ -1,10 +1,12 @@
 package br.com.erivania.beneficiarios_api.beneficiario.application.api;
 
+import br.com.erivania.beneficiarios_api.documento.application.api.DocumentoResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/v1/beneficiario")
@@ -16,6 +18,10 @@ public interface BeneficiarioAPI {
 
     @GetMapping
     List<BeneficiarioListResponse> getListaTodosBeneficiarios();
+
+    @GetMapping("/{idBeneficiario}/documentos")
+    List<DocumentoResponse> getListaDocumentosBeneficiario(@PathVariable UUID idBeneficiario);
+
 
 
 

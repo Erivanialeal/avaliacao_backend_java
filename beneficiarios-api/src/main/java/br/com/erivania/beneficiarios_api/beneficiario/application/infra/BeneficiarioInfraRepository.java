@@ -7,6 +7,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Log4j2
 @Repository
@@ -29,6 +30,11 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
         List<Beneficiario> listaTodosBeneficiario = beneficiarioSpringDataJPARepository.findAll();
         log.info("[finaliza] BeneficiarioInfraRepository - findAll");
         return listaTodosBeneficiario;
+    }
+
+    @Override
+    public Beneficiario buscarId(UUID idBeneficiario) {
+        return null;
     }
 
 

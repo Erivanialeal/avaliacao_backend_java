@@ -12,6 +12,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Log4j2
@@ -51,5 +52,19 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
         List<Beneficiario> beneficiarios = beneficiarioRepository.findAll();
         log.info("[finaliza] BeneficiarioApplicationService - listarTodosOsBeneficiario ");
         return BeneficiarioListResponse.converte(beneficiarios);
+    }
+
+    @Override
+    public List<DocumentoResponse> listarTodosOsDocumentos(UUID idBeneficiario) {
+        log.info("[inicia] BeneficiarioApplicationService - listarTodosOsDocumentos ");
+        Beneficiario beneficiario = beneficiarioRepository.buscarId(idBeneficiario);
+        log.info("[finaliza] BeneficiarioApplicationService - listarTodosOsDocumentos ");
+        return beneficiario.getDocumentos()
+                .stream()
+                .map(documento -> new DocumentoResponse(
+                        documento.getTipoDocumento(),
+                        documento.getDescricao()
+                ))
+                .toList();
     }
 }

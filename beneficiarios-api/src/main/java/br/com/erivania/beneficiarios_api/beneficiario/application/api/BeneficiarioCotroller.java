@@ -1,12 +1,14 @@
 package br.com.erivania.beneficiarios_api.beneficiario.application.api;
 
 import br.com.erivania.beneficiarios_api.beneficiario.application.service.BeneficiarioService;
+import br.com.erivania.beneficiarios_api.documento.application.api.DocumentoResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 @Log4j2
 @RestController
@@ -28,5 +30,13 @@ public class BeneficiarioCotroller implements BeneficiarioAPI {
         List<BeneficiarioListResponse> beneficiario = beneficiarioService.listarTodosOsBeneficiario();
         log.info("[finaliza] BeneficiarioCotroller - getListaTodosBeneficiarios");
         return beneficiario;
+    }
+
+    @Override
+    public List<DocumentoResponse> getListaDocumentosBeneficiario(UUID idBeneficiario) {
+        log.info("[inicia] BeneficiarioCotroller - getListaDocumentosBeneficiario");
+        List<DocumentoResponse> documentos = beneficiarioService.listarTodosOsDocumentos(idBeneficiario);
+        log.info("[finaliza] BeneficiarioCotroller - getListaDocumentosBeneficiario");
+        return documentos;
     }
 }
