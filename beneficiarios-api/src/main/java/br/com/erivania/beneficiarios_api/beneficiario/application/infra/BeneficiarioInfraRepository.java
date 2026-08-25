@@ -2,6 +2,7 @@ package br.com.erivania.beneficiarios_api.beneficiario.application.infra;
 
 import br.com.erivania.beneficiarios_api.beneficiario.application.domain.Beneficiario;
 import br.com.erivania.beneficiarios_api.beneficiario.application.repository.BeneficiarioRepository;
+import br.com.erivania.beneficiarios_api.documento.application.domain.Documento;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
@@ -34,7 +35,10 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
 
     @Override
     public Beneficiario buscarId(UUID idBeneficiario) {
-        return null;
+        log.info("[inicia] BeneficiarioInfraRepository - buscarId");
+        Beneficiario beneficiario = beneficiarioSpringDataJPARepository.findByIdBeneficiario(idBeneficiario);
+        log.info("[inicia] BeneficiarioInfraRepository - buscarId");
+        return beneficiario;
     }
 
 

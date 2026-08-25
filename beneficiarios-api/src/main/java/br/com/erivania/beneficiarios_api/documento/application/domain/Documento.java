@@ -29,6 +29,9 @@ public class Documento {
     @ManyToOne
     @JoinColumn(name = "id_beneficiario")
     private Beneficiario beneficiario;
+
+    protected Documento() {
+    }
     
 
     public Documento(DocumentoRequest documentoRequest, Beneficiario beneficiario) {
