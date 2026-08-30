@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Value;
 
 @Value
-public class AutenticationRequest {
+public class AuthenticationRequest {
     @NotBlank
     private String username;
     @NotBlank

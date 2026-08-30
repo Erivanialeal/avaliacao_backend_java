@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Entity
 @Getter
-public class Autentication {
+public class Authentication {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID idUsuario;

@@ -5,9 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public interface AutenticationAPI {
+public interface AuthenticationAPI {
 
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
-    AutenticationResponse autenticationResponse(@Valid @RequestBody AutenticationRequest autenticationRequest);
+    AuthenticationResponse authenticationResponse(@Valid @RequestBody AuthenticationRequest authenticationRequest);
 }
