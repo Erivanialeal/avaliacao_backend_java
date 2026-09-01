@@ -1,20 +1,20 @@
 package br.com.erivania.beneficiarios_api.beneficiario.application.api;
-
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import br.com.erivania.beneficiarios_api.documento.application.api.DocumentoRequest;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Value;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.UUID;
+import java.util.List;
 
-public class BeneficiarioRequest {
+@Value
+public class BeneficiarioRequest{
+    @NotBlank
     private String nome;
-    private  String telefone;
+    @NotBlank
+    private String telefone;
+    @NotNull
     private LocalDate dataNascimento;
-    private LocalDateTime dataInclusao;
-    private LocalDateTime dataAtualizacao;
-
+    private List<@Valid DocumentoRequest> documentos;
 }
