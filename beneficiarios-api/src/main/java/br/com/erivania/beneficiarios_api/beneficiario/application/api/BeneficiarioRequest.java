@@ -1,5 +1,4 @@
 package br.com.erivania.beneficiarios_api.beneficiario.application.api;
-
 import br.com.erivania.beneficiarios_api.documento.application.api.DocumentoRequest;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
