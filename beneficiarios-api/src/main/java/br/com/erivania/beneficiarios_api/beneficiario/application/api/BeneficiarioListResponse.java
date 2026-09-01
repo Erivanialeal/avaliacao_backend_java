@@ -1,7 +1,6 @@
 package br.com.erivania.beneficiarios_api.beneficiario.application.api;
 
-import br.com.erivania.beneficiarios_api.beneficiario.application.domain.Beneficiario;
-import lombok.Builder;
+import br.com.erivania.beneficiarios_api.beneficiario.domain.Beneficiario;
 import lombok.Value;
 
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package br.com.erivania.beneficiarios_api.beneficiario.application.domain;
+package br.com.erivania.beneficiarios_api.beneficiario.domain;
 
 
 import br.com.erivania.beneficiarios_api.beneficiario.application.api.BeneficiarioRequest;

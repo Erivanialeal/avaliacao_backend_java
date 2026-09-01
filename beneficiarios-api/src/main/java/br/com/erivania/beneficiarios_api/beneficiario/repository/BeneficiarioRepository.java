@@ -1,6 +1,6 @@
-package br.com.erivania.beneficiarios_api.beneficiario.application.repository;
+package br.com.erivania.beneficiarios_api.beneficiario.repository;
 
-import br.com.erivania.beneficiarios_api.beneficiario.application.domain.Beneficiario;
+import br.com.erivania.beneficiarios_api.beneficiario.domain.Beneficiario;
 
 import java.util.List;
 import java.util.UUID;

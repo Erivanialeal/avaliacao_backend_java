@@ -1,6 +1,6 @@
 package br.com.erivania.beneficiarios_api.documento.application.domain;
 
-import br.com.erivania.beneficiarios_api.beneficiario.application.domain.Beneficiario;
+import br.com.erivania.beneficiarios_api.beneficiario.domain.Beneficiario;
 import br.com.erivania.beneficiarios_api.documento.application.api.DocumentoRequest;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
