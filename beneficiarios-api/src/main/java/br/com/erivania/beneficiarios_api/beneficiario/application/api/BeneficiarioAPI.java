@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/v1/beneficiario")
+@RequestMapping("/beneficiario")
 public interface BeneficiarioAPI {
 
     @PostMapping
