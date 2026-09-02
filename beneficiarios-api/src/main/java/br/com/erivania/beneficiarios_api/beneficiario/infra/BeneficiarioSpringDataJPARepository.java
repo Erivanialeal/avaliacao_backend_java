@@ -1,6 +1,6 @@
-package br.com.erivania.beneficiarios_api.beneficiario.application.infra;
+package br.com.erivania.beneficiarios_api.beneficiario.infra;
 
-import br.com.erivania.beneficiarios_api.beneficiario.application.domain.Beneficiario;
+import br.com.erivania.beneficiarios_api.beneficiario.domain.Beneficiario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
