@@ -1,8 +1,7 @@
-package br.com.erivania.beneficiarios_api.beneficiario.application.infra;
+package br.com.erivania.beneficiarios_api.beneficiario.infra;
 
-import br.com.erivania.beneficiarios_api.beneficiario.application.domain.Beneficiario;
-import br.com.erivania.beneficiarios_api.beneficiario.application.repository.BeneficiarioRepository;
-import br.com.erivania.beneficiarios_api.documento.application.domain.Documento;
+import br.com.erivania.beneficiarios_api.beneficiario.domain.Beneficiario;
+import br.com.erivania.beneficiarios_api.beneficiario.repository.BeneficiarioRepository;
 import br.com.erivania.beneficiarios_api.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
